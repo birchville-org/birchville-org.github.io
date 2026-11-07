@@ -1,0 +1,15 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.token
+*.credentials
+credentials.json
+client_secrets*.json
+id_rsa*
+id_ed25519*
+secrets.json
+.DS_Store
