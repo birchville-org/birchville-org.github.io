@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birchville Documentation &bull; 404</title>
+    <link rel="icon" type="image/png" href="/assets/birchville_logo.png">
+    <script>
+        (function() {
+            var path = window.location.pathname;
+            // Weiterleitungen für Forschungsportal-Pfade
+            var researchPrefixes = ['/stand-der-forschung', '/posts', '/data', '/tags', '/feed'];
+            for (var i = 0; i < researchPrefixes.length; i++) {
+                if (path.startsWith(researchPrefixes[i])) {
+                    window.location.replace('/research' + path + window.location.search + window.location.hash);
+                    return;
+                }
+            }
+            // Sprachpfade (en, hi, sa) für Forschungsberichte
+            if (path.match(/^\/(en|hi|sa)\/(stand-der-forschung|posts)/)) {
+                window.location.replace('/research' + path + window.location.search + window.location.hash);
+                return;
+            }
+        })();
+    </script>
+    <style>
+        :root {
+            --bg: #fcf9f2;
+            --surface: #f1eee7;
+            --text-primary: #03192e;
+            --text-secondary: #1e2d37;
+            --text-muted: #6b6257;
+            --border: #d8d2c6;
+            --accent: #b45309;
+            --accent-hover: #92400e;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0a1628;
+                --surface: #0f1e35;
+                --text-primary: #e8e0d3;
+                --text-secondary: #c4bba5;
+                --text-muted: #a09080;
+                --border: #334155;
+                --accent: #eab308;
+                --accent-hover: #facc15;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 32rem;
+            text-align: center;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .logo {
+            height: 2.4rem;
+            border-radius: 4px;
+            margin-bottom: 1.25rem;
+        }
+
+        h1 {
+            font-family: "STIX Two Text", Georgia, serif;
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1.75rem;
+            font-size: 0.95rem;
+        }
+
+        .actions {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.6rem 1.1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.15s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #ffffff;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/assets/birchville_logo.png" alt="Birchville" class="logo">
+        <h1>Seite nicht gefunden</h1>
+        <p>Die gesuchte Ressource existiert nicht oder wurde im Zuge der Migration verschoben.</p>
+        <div class="actions">
+            <a href="/" class="btn btn-primary">&larr; Zurück zum Docs-Hub</a>
+            <a href="/research/" class="btn btn-outline">Birchville Research &rarr;</a>
+        </div>
+    </div>
+</body>
+</html>
